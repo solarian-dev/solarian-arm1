@@ -1,0 +1,75 @@
+{
+    "url": "https://cad.onshape.com/documents/d60e2cd05d40533c485d06e9/w/361314ab0f218f78e02b4966/e/cf4fff8f31934d4f2d96a1b1",
+    "output_format": "mujoco",
+    "output_filename": "so106_raw",
+    "assets_directory": "meshes",
+    "robot_name": "so106",
+    "draw_frames": false,
+    "no_dynamics": false,
+    "joint_properties": {
+        "shoulder_pan": {
+            "range": true,
+            "limits": [
+                -2.22899197815522,
+                2.081971274270774
+            ]
+        },
+        "shoulder_lift": {
+            "range": true,
+            "limits": [
+                -1.7987712336903257,
+                1.7802358370342863
+            ]
+        },
+        "elbow_flex": {
+            "range": true,
+            "limits": [
+                -1.7802358370341442,
+                1.5707963267949685
+            ]
+        },
+        "wrist_flex": {
+            "range": true,
+            "limits": [
+                -3.141592653589787,
+                3.1415926535897993
+            ]
+        },
+        "wrist_yaw": {
+            "range": true,
+            "limits": [
+                -3.141592653589793,
+                3.141592653589793
+            ]
+        },
+        "wrist_roll": {
+            "range": true,
+            "limits": [
+                -6.283185307179586,
+                0.0
+            ]
+        }
+    },
+    "solarian": {
+        "dof_mates": [],
+        "base_dof": "shoulder_pan",
+        "output_xml": "../so106.xml",
+        "meshdir": "so106_description/meshes",
+        "density": 1400,
+        "ee_site": {
+            "name": "gripper",
+            "site": "flange",
+            "offset": [
+                0,
+                0.04356,
+                0.1561
+            ],
+            "quat": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        }
+    }
+}

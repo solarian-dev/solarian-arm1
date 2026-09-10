@@ -1,0 +1,31 @@
+[project]
+name = "solarian-so106"
+version = "0.1.0"
+description = "SO-106 arm module for the Solarian robotics framework"
+authors = [
+    {name = "Solarian Contributors", email = "solarian@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "solarian>=0.1.0",
+    "solarian-feetech>=0.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["solarian_so106*"]
+
+[tool.setuptools.package-data]
+solarian_so106 = [
+    "conf_arm.yaml",
+    "assets/so106.xml",
+    "assets/so106_description/config.json",
+    "assets/so106_description/meshes/*.stl",
+]
+
+[project.entry-points."solarian.modules"]
+so106-arm = "solarian_so106.arm:So106ArmModule"
