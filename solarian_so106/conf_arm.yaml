@@ -1,7 +1,7 @@
 # Default configuration for So106ArmModule.
 #
 # Copied into a project's conf/ directory (e.g. conf/right_arm.yaml).
-# Set actuator_port / servo ids to match the installed hardware. sim: joint
+# Set actuator_port / servo ids to match the installed hardware. sim_joint
 # names must match the ModuleAttachment prefix used in the robot scene.
 
 actuator_port: /dev/ttyACM0
@@ -10,111 +10,51 @@ interpolator_type: pose
 drive_waypoints: true
 drive_horizon_multiplier: 2.5
 max_speed: [0.25, 0.6]
-calibration_file: .cache/calibration/so106_arm.json
 
 # Simulated with the plugin MJCF (ARM_MJCF_PATH) attached under the `arm/`
 # prefix, so joints become `arm/shoulder_pan` .. `arm/wrist_roll`.
-# sim.range_min/range_max are the MJCF joint limits (radians).
+# sim_range_* are the MJCF joint limits (radians).
+# Optional per-joint ``model:`` (e.g. sts3215) overrides the module default.
 actuators:
     shoulder_pan:
         id: 1
-        model: sts3250
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/shoulder_pan"
-            actuator: "arm/shoulder_pan"
-            range_min: -2.228991978
-            range_max: 2.081971274
+        sim_joint: "arm/shoulder_pan"
+        sim_range_min: -2.228991978
+        sim_range_max: 2.081971274
     shoulder_lift:
         id: 2
-        model: sts3250
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/shoulder_lift"
-            actuator: "arm/shoulder_lift"
-            range_min: -1.798771234
-            range_max: 1.780235837
+        sim_joint: "arm/shoulder_lift"
+        sim_range_min: -1.798771234
+        sim_range_max: 1.780235837
     elbow_flex:
         id: 3
-        model: sts3250
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/elbow_flex"
-            actuator: "arm/elbow_flex"
-            range_min: -1.780235837
-            range_max: 1.570796327
+        sim_joint: "arm/elbow_flex"
+        sim_range_min: -1.780235837
+        sim_range_max: 1.570796327
     wrist_flex:
         id: 4
-        model: sts3250
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/wrist_flex"
-            actuator: "arm/wrist_flex"
-            range_min: -3.141592654
-            range_max: 3.141592654
+        sim_joint: "arm/wrist_flex"
+        sim_range_min: -3.141592654
+        sim_range_max: 3.141592654
     wrist_yaw:
         id: 5
-        model: sts3215
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/wrist_yaw"
-            actuator: "arm/wrist_yaw"
-            range_min: -3.141592654
-            range_max: 3.141592654
+        sim_joint: "arm/wrist_yaw"
+        sim_range_min: -3.141592654
+        sim_range_max: 3.141592654
     wrist_roll:
         id: 6
-        model: sts3215
         port: ${actuator_port}
-        type: feetech
         mode: range_m100_100
-        sim:
-            joint: "arm/wrist_roll"
-            actuator: "arm/wrist_roll"
-            range_min: -6.283185307
-            range_max: 0
-    x:
-        id: 0
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
-    y:
-        id: 1
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
-    z:
-        id: 2
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
-    rx:
-        id: 3
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
-    ry:
-        id: 4
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
-    rz:
-        id: 5
-        model: ik_cartesian
-        port: ${actuator_port}
-        type: ik_cartesian
-        mode: raw
+        sim_joint: "arm/wrist_roll"
+        sim_range_min: -3.141592654
+        sim_range_max: 3.141592654

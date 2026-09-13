@@ -6,16 +6,13 @@ from solarian_so106 import ARM_MJCF_PATH
 
 # SO-106 is a full 6-DOF arm (the gripper is a separate module). IK controls all
 # six joints, each mapped 1:1 onto the identically named joint of the SO-106
-# MuJoCo model. The end-effector frame is the model's ``gripper`` site: UMI TCP
-# (fingertip origin, OpenCV camera axes: +X right in the image, +Y down, +Z
-# optical-forward). It is not the mechanical flange; see ee_site in
-# assets/so106_description/config.json (flange offset + Rz(180)).
+# MuJoCo model. The TCP defaults to the wrist rail ``flange``; a project mates
+# a tool by passing that tool's flange-relative pose as ``ik_tcp``.
 IK_JOINT_ACTUATORS = [
     "shoulder_pan", "shoulder_lift", "elbow_flex", "wrist_flex", "wrist_yaw", "wrist_roll",
 ]
 IK_JOINT_MODEL_NAMES = IK_JOINT_ACTUATORS
 IK_MJCF = ARM_MJCF_PATH
-IK_EE_FRAME = "gripper"
 
 # Named joint poses (``home``, ``ground``) belong to MoveSkill, in the
 # project's conf/move.yaml: this module takes joint values, not pose names.
@@ -23,7 +20,7 @@ IK_EE_FRAME = "gripper"
 # to radians via the IK joint limits for ArmModule.moveJ (SI API).
 
 # Per-joint position PID. Gravity-loaded joints (lift, elbow, wrist_flex) get
-# stiffer P/D so the arm holds against the UMI gripper mass; distal yaw/roll
+# stiffer P/D so the arm holds against typical tool mass; distal yaw/roll
 # stay closer to the soft SO-100 defaults (P=12/D=32).
 #
 # Gravity joints also get a small I (P-only cannot cancel constant gravity),
@@ -68,18 +65,12 @@ SERVO_GAINS = {
 
 
 class So106ArmModule(ArmModule):
-    shoulder_pan = FeetechServo()
-    shoulder_lift = FeetechServo()
-    elbow_flex = FeetechServo()
-    wrist_flex = FeetechServo()
-    wrist_yaw = FeetechServo()
-    wrist_roll = FeetechServo()
-
-    # ``wrist_roll`` spins ~full turn with no usable hard stop — skip it in the
-    # calibrate-module sweep and let ``calibrate-ik`` Step 2 anchor its zero on
-    # an operator-chosen reference pose (fixes the common quarter-turn mirror
-    # offset when the swept range zero does not match the model).
-    ik_continuous_joints = ["wrist_roll", "wrist_yaw", "wrist_flex"]
+    shoulder_pan = FeetechServo(model="sts3250")
+    shoulder_lift = FeetechServo(model="sts3250")
+    elbow_flex = FeetechServo(model="sts3250")
+    wrist_flex = FeetechServo(model="sts3250", is_continuous=True)
+    wrist_yaw = FeetechServo(model="sts3215", is_continuous=True)
+    wrist_roll = FeetechServo(model="sts3215", is_continuous=True)
 
     # Cartesian-space actuators (end-effector pose). Present because this arm
     # implements IK; ``cfg.id`` 0..5 selects the pose component x,y,z,rx,ry,rz.
@@ -98,7 +89,7 @@ class So106ArmModule(ArmModule):
     ik_backend = MinkIK(
         mjcf=IK_MJCF,
         joints=dict(zip(IK_JOINT_ACTUATORS, IK_JOINT_MODEL_NAMES)),
-        frame=IK_EE_FRAME,
+        frame="flange",
         position_cost=1.0,
         orientation_cost=1.0,
     )

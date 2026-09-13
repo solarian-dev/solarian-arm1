@@ -2,8 +2,8 @@
 solarian-so106
 
 SO-106 6-DOF arm module for the Solarian robotics framework. Joints are
-Feetech STS servos; the gripper is a separate module (typically
-``solarian-umi-slim``).
+Feetech STS servos. A gripper is a separate module; the project passes that
+tool's flange-relative TCP as ``So106ArmModule(ik_tcp=...)``.
 """
 
 from pathlib import Path

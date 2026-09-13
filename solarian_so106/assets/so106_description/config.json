@@ -45,31 +45,17 @@
         "wrist_roll": {
             "range": true,
             "limits": [
-                -6.283185307179586,
-                0.0
+                -3.141592653589793,
+                3.141592653589793
             ]
         }
     },
     "solarian": {
+        "prefer_config_limits": true,
         "dof_mates": [],
         "base_dof": "shoulder_pan",
         "output_xml": "../so106.xml",
         "meshdir": "so106_description/meshes",
-        "density": 1400,
-        "ee_site": {
-            "name": "gripper",
-            "site": "flange",
-            "offset": [
-                0,
-                0.04356,
-                0.1561
-            ],
-            "quat": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ]
-        }
+        "density": 1400
     }
 }

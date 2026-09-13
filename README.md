@@ -31,7 +31,7 @@ from solarian_umi_slim import MJCF_FEETECH_PATH as UMI_SLIM_MJCF
 from solarian_umi_slim.umi_slim_feetech import UmiSlimFeetechModule
 
 class So106Robot(Robot):
-    right_arm = So106ArmModule()
+    right_arm = So106ArmModule(ik_tcp=UmiSlimFeetechModule.tcp_from_flange)
     right_gripper = UmiSlimFeetechModule()
     scene = SceneConfig(
         attachments=[
@@ -51,10 +51,10 @@ class So106Robot(Robot):
     )
 ```
 
-The arm MJCF exports a `flange` site (CAD Frame) and a `gripper` site (UMI TCP,
-offset from the flange in `config.json`). Attach a gripper by aligning both
-models' `flange` frames. IK solves against the arm model alone, using the
-`gripper` site.
+The arm MJCF exports a `flange` site (CAD Frame). Attach a gripper by aligning
+both models' `flange` frames. IK tracks `flange` plus the tool's
+`tcp_from_flange` offset (CAD `tcp` in the gripper's mate frame). The scene
+still attaches the gripper MJCF for physics and cameras.
 
 ## Onshape export
 
@@ -74,5 +74,9 @@ solarian onshape-export plugins/solarian-so106/solarian_so106/assets/so106_descr
 ```
 
 CAD mates should be named `shoulder_pan` … `wrist_roll`. Keep a Frame named
-`flange` on the wrist for gripper attachment, and keep `solarian.ee_site.name`
-as `gripper`.
+`flange` on the wrist for gripper attachment. Put the tool TCP Frame on the
+gripper assembly (name it `tcp`), not on the arm.
+
+`wrist_roll` is 0-centered (`±π`) in `so106.xml` / `config.json` even though
+CAD exports `[-2π, 0]`. `solarian.prefer_config_limits` keeps that override
+on re-export so home can roll both ways.
