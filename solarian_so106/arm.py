@@ -112,4 +112,8 @@ class So106ArmModule(ArmModule):
         for name, gains in SERVO_GAINS.items():
             self.configure_components(gains, component_names=[name])
 
+        # Servos keep the Goal_Position from the last session, so energising
+        # without latching first snaps the arm to wherever it was commanded
+        # before, from wherever it is now.
+        self.hold_measured_pose()
         self.enable_torque()
