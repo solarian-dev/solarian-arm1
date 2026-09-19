@@ -115,5 +115,4 @@ class So106ArmModule(ArmModule):
         # Servos keep the Goal_Position from the last session, so energising
         # without latching first snaps the arm to wherever it was commanded
         # before, from wherever it is now.
-        self.hold_measured_pose()
-        self.enable_torque()
+        self.enable_torque_holding()
