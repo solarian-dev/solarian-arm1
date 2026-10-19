@@ -12,6 +12,13 @@ dependencies = [
     "solarian-feetech>=0.1.0",
 ]
 
+[project.optional-dependencies]
+# The servo SDKs, for the machine wired to the arm. Without them the module
+# still imports, so a relay or controller can build the robot's schema.
+hardware = [
+    "solarian-feetech[hardware]>=0.1.0",
+]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"

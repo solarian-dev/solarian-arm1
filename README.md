@@ -70,7 +70,7 @@ joint limits into a project's arm config:
 
 ```bash
 solarian onshape-export plugins/solarian-so106/solarian_so106/assets/so106_description \
-    --update-yaml projects/so106/conf/right_arm.yaml
+    --update-yaml projects/so106/conf/modules/right_arm.yaml
 ```
 
 CAD mates should be named `shoulder_pan` … `wrist_roll`. Keep a Frame named
