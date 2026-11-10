@@ -1,11 +1,13 @@
 [project]
-name = "solarian-so106"
+name = "solarian-arm-1"
 version = "0.1.0"
-description = "SO-106 arm module for the Solarian robotics framework"
+description = "Solarian Arm 1 module for the Solarian robotics framework"
 authors = [
-    {name = "Solarian Contributors", email = "solarian@example.com"}
+    {name = "Raul Garreta", email = "raul@solarian.dev"}
 ]
 readme = "README.md"
+license = {text = "Apache-2.0"}
+classifiers = ["License :: OSI Approved :: Apache Software License"]
 requires-python = ">=3.10"
 dependencies = [
     "solarian>=0.1.0",
@@ -24,15 +26,15 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["solarian_so106*"]
+include = ["solarian_arm_1*"]
 
 [tool.setuptools.package-data]
-solarian_so106 = [
+solarian_arm_1 = [
     "conf_arm.yaml",
-    "assets/so106.xml",
-    "assets/so106_description/config.json",
-    "assets/so106_description/meshes/*.stl",
+    "assets/arm1.xml",
+    "assets/arm1_description/config.json",
+    "assets/arm1_description/meshes/*.stl",
 ]
 
 [project.entry-points."solarian.modules"]
-so106-arm = "solarian_so106.arm:So106ArmModule"
+arm-1 = "solarian_arm_1.arm:Arm1Module"

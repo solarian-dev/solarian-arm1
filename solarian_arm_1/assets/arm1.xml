@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mujoco model="so106">
-  <compiler angle="radian" meshdir="so106_description/meshes" autolimits="true" inertiafromgeom="auto" inertiagrouprange="3 3" />
+<mujoco model="arm1">
+  <compiler angle="radian" meshdir="arm1_description/meshes" autolimits="true" inertiafromgeom="auto" inertiagrouprange="3 3" />
   <default>
-    <default class="so106">
+    <default class="arm1">
       <joint frictionloss="0.1" armature="0.005" />
       <position kp="50" dampratio="1" />
       <default class="visual">
@@ -14,7 +14,7 @@
     </default>
   </default>
   <worldbody>
-    <body name="sts3215_03a" pos="0 0 0" quat="1 0 0 0" childclass="so106">
+    <body name="sts3215_03a" pos="0 0 0" quat="1 0 0 0" childclass="arm1">
       <geom type="mesh" class="visual" pos="9.94325e-05 0.0336225 0" quat="0.707107 0.707107 -0 -0" mesh="base_08q" material="base_08q_material" />
       <geom type="mesh" class="collision" pos="9.94325e-05 0.0336225 0" quat="0.707107 0.707107 -0 -0" mesh="base_08q" material="base_08q_material" />
       <geom type="mesh" class="visual" pos="-0 0.0336225 -0" quat="0.707107 0.707107 0 -0" mesh="base_08q__2" material="base_08q__2_material" />
@@ -102,11 +102,11 @@
     <material name="servo_horn_material" rgba="0.615686 0.811765 0.929412 1" />
   </asset>
   <actuator>
-    <position class="so106" name="shoulder_pan" joint="shoulder_pan" inheritrange="1" />
-    <position class="so106" name="shoulder_lift" joint="shoulder_lift" inheritrange="1" />
-    <position class="so106" name="elbow_flex" joint="elbow_flex" inheritrange="1" />
-    <position class="so106" name="wrist_flex" joint="wrist_flex" inheritrange="1" />
-    <position class="so106" name="wrist_yaw" joint="wrist_yaw" inheritrange="1" />
-    <position class="so106" name="wrist_roll" joint="wrist_roll" inheritrange="1" />
+    <position class="arm1" name="shoulder_pan" joint="shoulder_pan" inheritrange="1" />
+    <position class="arm1" name="shoulder_lift" joint="shoulder_lift" inheritrange="1" />
+    <position class="arm1" name="elbow_flex" joint="elbow_flex" inheritrange="1" />
+    <position class="arm1" name="wrist_flex" joint="wrist_flex" inheritrange="1" />
+    <position class="arm1" name="wrist_yaw" joint="wrist_yaw" inheritrange="1" />
+    <position class="arm1" name="wrist_roll" joint="wrist_roll" inheritrange="1" />
   </actuator>
 </mujoco>

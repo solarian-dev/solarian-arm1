@@ -1,4 +1,4 @@
-# Default configuration for So106ArmModule.
+# Default configuration for Arm1Module.
 #
 # Copied into a project's conf/ directory (e.g. conf/right_arm.yaml).
 # Set actuator_port / servo ids to match the installed hardware. sim_joint

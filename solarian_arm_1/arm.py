@@ -1,12 +1,12 @@
 from solarian.core.arm_module import ArmModule
 from solarian.core.ik import CartesianIKActuator, MinkIK
 from solarian_feetech.actuator import FeetechServo
-from solarian_so106 import ARM_MJCF_PATH
+from solarian_arm_1 import ARM_MJCF_PATH
 
 
-# SO-106 is a full 6-DOF arm (the gripper is a separate module). IK controls all
-# six joints, each mapped 1:1 onto the identically named joint of the SO-106
-# MuJoCo model. The TCP defaults to the wrist rail ``flange``; a project mates
+# Solarian Arm 1 is a full 6-DOF arm (the gripper is a separate module). IK
+# controls all six joints, each mapped 1:1 onto the identically named joint of
+# the arm's MuJoCo model. The TCP defaults to the wrist rail ``flange``; a project mates
 # a tool by passing that tool's flange-relative pose as ``ik_tcp``.
 IK_JOINT_ACTUATORS = [
     "shoulder_pan", "shoulder_lift", "elbow_flex", "wrist_flex", "wrist_yaw", "wrist_roll",
@@ -64,7 +64,7 @@ SERVO_GAINS = {
 }
 
 
-class So106ArmModule(ArmModule):
+class Arm1Module(ArmModule):
     shoulder_pan = FeetechServo(model="sts3250")
     shoulder_lift = FeetechServo(model="sts3250")
     elbow_flex = FeetechServo(model="sts3250")

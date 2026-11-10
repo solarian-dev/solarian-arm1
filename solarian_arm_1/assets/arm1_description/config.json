@@ -1,9 +1,9 @@
 {
     "url": "https://cad.onshape.com/documents/d60e2cd05d40533c485d06e9/w/361314ab0f218f78e02b4966/e/cf4fff8f31934d4f2d96a1b1",
     "output_format": "mujoco",
-    "output_filename": "so106_raw",
+    "output_filename": "arm1_raw",
     "assets_directory": "meshes",
-    "robot_name": "so106",
+    "robot_name": "arm1",
     "draw_frames": false,
     "no_dynamics": false,
     "joint_properties": {
@@ -54,8 +54,8 @@
         "prefer_config_limits": true,
         "dof_mates": [],
         "base_dof": "shoulder_pan",
-        "output_xml": "../so106.xml",
-        "meshdir": "so106_description/meshes",
+        "output_xml": "../arm1.xml",
+        "meshdir": "arm1_description/meshes",
         "density": 1400
     }
 }
