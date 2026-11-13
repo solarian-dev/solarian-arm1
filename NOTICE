@@ -1,4 +1,4 @@
-Solarian Arm 1 plugin
+solarian-arm1
 Copyright 2026 PrimaryKey Inc.
 
 This product includes software developed by PrimaryKey Inc.
@@ -8,11 +8,11 @@ Third-party designs
 ===================
 
 solarian_arm_1/assets/
-  The Solarian Arm 1 mechanical design, its meshes and its MuJoCo model are
+  The solarian-arm1 mechanical design, its meshes and its MuJoCo model are
   derived from the SO-ARM100 (Standard Open Arm 100) by The Robot Studio
   (https://github.com/TheRobotStudio/SO-ARM100), Apache License 2.0, and
   modified, including an added wrist yaw joint and different servos.
   Meshes named so_arm100_* and sts3215_* come from that design.
 
-Solarian Arm 1 is not affiliated with, sponsored by, or endorsed by The Robot
+solarian-arm1 is not affiliated with, sponsored by, or endorsed by The Robot
 Studio or Hugging Face.

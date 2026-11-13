@@ -1,7 +1,7 @@
 [project]
-name = "solarian-arm-1"
+name = "solarian-arm1"
 version = "0.1.0"
-description = "Solarian Arm 1 module for the Solarian robotics framework"
+description = "solarian-arm1, a mod of The Robot Studio SO-100 with an extra wrist degree of freedom"
 authors = [
     {name = "Raul Garreta", email = "raul@solarian.dev"}
 ]

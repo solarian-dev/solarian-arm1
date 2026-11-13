@@ -1,9 +1,10 @@
 """
-solarian-arm-1
+solarian-arm1
 
-Solarian Arm 1, a 6-DOF arm module for the Solarian robotics framework. Joints are
-Feetech STS servos. A gripper is a separate module; the project passes that
-tool's flange-relative TCP as ``Arm1Module(ik_tcp=...)``.
+A 6-DOF arm module for Solarian: a mod of The Robot Studio SO-100 that adds
+one degree of freedom in the wrist. Joints are Feetech STS servos. A gripper
+is a separate module; the project passes that tool's flange-relative TCP as
+``Arm1Module(ik_tcp=...)``.
 """
 
 from pathlib import Path
