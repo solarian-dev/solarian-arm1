@@ -1,6 +1,6 @@
 [project]
 name = "solarian-arm1"
-version = "0.2.0"
+version = "0.2.1"
 description = "solarian-arm1, a mod of The Robot Studio SO-100 with an extra wrist degree of freedom"
 authors = [
     {name = "Raul Garreta", email = "raul@solarian.dev"}
@@ -10,7 +10,7 @@ license = {text = "Apache-2.0"}
 classifiers = ["License :: OSI Approved :: Apache Software License"]
 requires-python = ">=3.10"
 dependencies = [
-    "solarian>=0.1.0",
+    "solarian>=0.3.0",
     "solarian-feetech>=0.1.0",
 ]
 
