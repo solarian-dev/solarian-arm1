@@ -1,7 +1,7 @@
 from solarian.core.arm_module import ArmModule
 from solarian.core.ik import CartesianIKActuator, MinkIK
 from solarian_feetech.actuator import FeetechServo
-from solarian_arm_1 import ARM_MJCF_PATH
+from solarian_arm1 import ARM_MJCF_PATH
 
 
 # Solarian Arm 1 is a full 6-DOF arm (the gripper is a separate module). IK

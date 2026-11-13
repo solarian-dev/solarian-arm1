@@ -68,6 +68,6 @@ tmp
 *.log
 
 # onshape-export byproducts (only the cleaned MJCF + meshes/*.stl matter)
-solarian_arm_1/assets/*_description/*_raw.xml
-solarian_arm_1/assets/*_description/scene.xml
-solarian_arm_1/assets/*_description/meshes/*.part
+solarian_arm1/assets/*_description/*_raw.xml
+solarian_arm1/assets/*_description/scene.xml
+solarian_arm1/assets/*_description/meshes/*.part

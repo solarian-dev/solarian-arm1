@@ -7,7 +7,7 @@ This product includes software developed by PrimaryKey Inc.
 Third-party designs
 ===================
 
-solarian_arm_1/assets/
+solarian_arm1/assets/
   The solarian-arm1 mechanical design, its meshes and its MuJoCo model are
   derived from the SO-ARM100 (Standard Open Arm 100) by The Robot Studio
   (https://github.com/TheRobotStudio/SO-ARM100), Apache License 2.0, and

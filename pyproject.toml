@@ -1,6 +1,6 @@
 [project]
 name = "solarian-arm1"
-version = "0.1.0"
+version = "0.2.0"
 description = "solarian-arm1, a mod of The Robot Studio SO-100 with an extra wrist degree of freedom"
 authors = [
     {name = "Raul Garreta", email = "raul@solarian.dev"}
@@ -26,10 +26,10 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["solarian_arm_1*"]
+include = ["solarian_arm1*"]
 
 [tool.setuptools.package-data]
-solarian_arm_1 = [
+solarian_arm1 = [
     "conf_arm.yaml",
     "assets/arm1.xml",
     "assets/arm1_description/config.json",
@@ -37,4 +37,4 @@ solarian_arm_1 = [
 ]
 
 [project.entry-points."solarian.modules"]
-arm-1 = "solarian_arm_1.arm:Arm1Module"
+arm-1 = "solarian_arm1.arm:Arm1Module"
