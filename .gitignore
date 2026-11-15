@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+/*.zip
 
 # uv/poetry lock files
 poetry.lock

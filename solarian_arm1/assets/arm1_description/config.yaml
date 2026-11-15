@@ -1,0 +1,21 @@
+# cad-import reads this file and does not rewrite it.
+# Edit a value, then run the import again.
+
+# kg/m³ used to infer link mass from the collision meshes.
+density: 1400
+
+# Position-actuator stiffness. N/m on a slide, N·m/rad on a hinge.
+kp: 50
+# Damping ratio of the position actuators.
+dampratio: 1
+# Joint friction loss. N on a slide, N·m on a hinge.
+frictionloss: 0.1
+# Rotor inertia reflected onto the joint.
+armature: 0.005
+
+# Drop the base freejoint so the model attaches into a scene.
+attach: true
+# Infer mass from geometry instead of the URDF inertials.
+strip_inertials: true
+# Let the mechanism's own links collide with each other.
+self_collision: false
