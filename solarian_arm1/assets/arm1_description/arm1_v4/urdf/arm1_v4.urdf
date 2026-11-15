@@ -43,8 +43,8 @@
             <geometry>
                 <mesh filename="package://arm1_v4/meshes/horn_spacer_2_mm.stl" scale="1 1 1" />
             </geometry>
-            <material name="0.000000_0.000000_0.000000_0.000000_0.000000">
-                <color rgba="0 0 0 1" />
+            <material name="0.800000_0.800000_0.800000_0.000000_0.000000">
+                <color rgba="0.8 0.8 0.8 1" />
             </material>
         </visual>
     </link>
@@ -83,11 +83,11 @@
     <link name="part_1_1">
         <inertial>
             <mass value="2.25223e-06" />
-            <origin xyz="-5.60859e-07 -0.000875316 0.00283571" rpy="0 -0 -3.14159" />
+            <origin xyz="5.60859e-07 0.000875316 0.00283571" rpy="0 -0 0" />
             <inertia ixx="4.06606e-10" ixy="-2.05579e-14" ixz="-1.65759e-14" iyy="1.64174e-10" iyz="-1.99362e-11" izz="5.19431e-10" />
         </inertial>
         <visual>
-            <origin xyz="0 0 0" rpy="0 -0 -3.14159" />
+            <origin xyz="0 0 0" rpy="0 -0 0" />
             <geometry>
                 <mesh filename="package://arm1_v4/meshes/Part_1_1.stl" scale="1 1 1" />
             </geometry>
@@ -116,11 +116,11 @@
     <link name="servo_horn">
         <inertial>
             <mass value="7.14712e-07" />
-            <origin xyz="1.73472e-18 0 -0.00125" rpy="0 -0 3.14159" />
+            <origin xyz="-1.73472e-18 0 -0.00125" rpy="0 -0 0" />
             <inertia ixx="1.82356e-11" ixy="0" ixz="0" iyy="1.82356e-11" iyz="0" izz="3.57268e-11" />
         </inertial>
         <visual>
-            <origin xyz="-0.002 0.0308 -0.0108" rpy="0 -0 3.14159" />
+            <origin xyz="0.002 -0.0308 -0.0108" rpy="0 -0 0" />
             <geometry>
                 <mesh filename="package://arm1_v4/meshes/Servo_Horn.stl" scale="1 1 1" />
             </geometry>
@@ -345,25 +345,25 @@
         <limit effort="1" velocity="1" lower="-2.15548" upper="2.15548" />
     </joint>
     <joint name="dof_wrist_flex" type="revolute">
-        <origin xyz="2.77556e-17 0 -0.007" rpy="3.14159 -2.55521e-16 -1.5708" />
+        <origin xyz="1.38778e-16 1.58207e-15 -0.007" rpy="3.14159 -6.97237e-15 -1.5708" />
         <axis xyz="0 0 -1" />
         <parent link="horn_spacer_7_mm" />
         <child link="part_1" />
         <limit effort="1" velocity="1" lower="-3.14159" upper="3.14159" />
     </joint>
     <joint name="dof_wrist_roll" type="revolute">
-        <origin xyz="0.0328 -0.01025 0.0346" rpy="8.95533e-16 -9.21625e-16 -1.5708" />
+        <origin xyz="0.0328 -0.01025 0.0346" rpy="8.88178e-16 -6.12323e-17 -1.5708" />
         <axis xyz="0 0 1" />
         <parent link="sts3215_03a_wrist_roll" />
         <child link="servo_horn" />
-        <limit effort="1" velocity="1" lower="-6.28319" upper="0" />
+        <limit effort="1" velocity="1" lower="-3.14159" upper="3.14159" />
     </joint>
     <joint name="dof_wrist_yaw" type="revolute">
-        <origin xyz="-6.245e-17 1.11022e-16 -0.002" rpy="3.14159 -5.68794e-16 -3.14159" />
+        <origin xyz="5.55112e-17 -6.93889e-18 -0.002" rpy="-3.14159 3.65563e-28 1.5708" />
         <axis xyz="0 0 -1" />
         <parent link="horn_spacer_2_mm" />
         <child link="part_1_1" />
-        <limit effort="1" velocity="1" lower="-6.28319" upper="0" />
+        <limit effort="1" velocity="1" lower="-3.14159" upper="3.14159" />
     </joint>
     <joint name="fix_base_fastener" type="fixed">
         <origin xyz="-0.01735 0.0481 -0.0381203" rpy="1.31777e-82 -0 0" />
@@ -378,13 +378,13 @@
         <child link="base_08q_1" />
     </joint>
     <joint name="fix_bracket_to_wrist_yaw_servo" type="fixed">
-        <origin xyz="0.012225 0.01615 0.0095" rpy="-1.5708 3.76619e-27 3.14159" />
+        <origin xyz="0.012225 0.01615 0.0095" rpy="-1.5708 3.0434e-25 -3.14159" />
         <axis xyz="0 0 -1" />
         <parent link="part_1" />
         <child link="sts3215_03a_wrist_roll_1" />
     </joint>
     <joint name="fix_horn_spacer" type="fixed">
-        <origin xyz="0.0328 -0.01025 0.0346" rpy="3.14159 -1.16592e-15 1.5708" />
+        <origin xyz="0.0328 -0.01025 0.0346" rpy="-3.14159 6.31089e-30 4.44819e-31" />
         <axis xyz="0 0 1" />
         <parent link="sts3215_03a_wrist_roll_1" />
         <child link="horn_spacer_2_mm" />
@@ -432,13 +432,13 @@
         <child link="so_arm100_08k_asym_mirror_clip" />
     </joint>
     <joint name="fix_wrist_roll_to_bracket" type="fixed">
-        <origin xyz="-0.01025 0.01615 0.0095" rpy="0 -1.5708 1.5708" />
+        <origin xyz="0.01025 -0.01615 0.0095" rpy="0 -1.5708 -1.5708" />
         <axis xyz="0 0 -1" />
         <parent link="part_1_1" />
         <child link="sts3215_03a_wrist_roll" />
     </joint>
     <joint name="frame_flange" type="fixed">
-        <origin xyz="-1.38778e-17 -5.55112e-17 -5.55112e-17" rpy="-2.2482e-14 -4.44089e-16 3.14159" />
+        <origin xyz="0 1.11022e-16 0" rpy="3.33067e-16 -9.48482e-30 -3.14159" />
         <axis xyz="0 0 1" />
         <parent link="servo_horn" />
         <child link="x_axis" />
