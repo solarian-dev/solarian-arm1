@@ -1,6 +1,6 @@
 [project]
 name = "solarian-arm1"
-version = "0.2.1"
+version = "0.2.2"
 description = "solarian-arm1, a mod of The Robot Studio SO-100 with an extra wrist degree of freedom"
 authors = [
     {name = "Raul Garreta", email = "raul@solarian.dev"}
@@ -32,7 +32,7 @@ include = ["solarian_arm1*"]
 solarian_arm1 = [
     "conf_arm.yaml",
     "assets/arm1.xml",
-    "assets/arm1_description/config.json",
+    "assets/arm1_description/config.yaml",
     "assets/arm1_description/meshes/*.stl",
 ]
 
