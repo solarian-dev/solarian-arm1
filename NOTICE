@@ -14,5 +14,14 @@ solarian_arm1/assets/
   modified, including an added wrist yaw joint and different servos.
   Meshes named so_arm100_* and sts3215_* come from that design.
 
+STL/, STEP/, docs/media/ and tools/assembly_render/cad/
+  Print-ready wrist parts, CAD export and renders of solarian-arm1. The
+  stock arm parts in them (meshes named Base_08q, Rotation_Pitch_08i,
+  SO_ARM100_08k_* and STS3215_03a*) come from the SO-ARM100 design above.
+  STS3215_Side_bracket and STS3215_End_bracket are imported models of the
+  standard sheet-metal STS3215 servo brackets. The renders in docs/media also
+  show solarian-gripper1 (https://github.com/solarian-dev/solarian-gripper1);
+  see that repository's NOTICE for its third-party designs.
+
 solarian-arm1 is not affiliated with, sponsored by, or endorsed by The Robot
 Studio or Hugging Face.

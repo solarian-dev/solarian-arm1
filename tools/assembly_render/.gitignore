@@ -1,0 +1,13 @@
+data/
+data_dec/
+data_plate/
+frames/
+stills/
+_titled/
+shots_*.json
+stills.json
+labels.json
+steps.json
+orient.json
+__pycache__/
+node_modules/
